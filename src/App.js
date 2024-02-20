@@ -1,15 +1,22 @@
 import "./App.css";
 import Navbar from "./components/Navbar";
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { fas } from '@fortawesome/free-solid-svg-icons'
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fas } from "@fortawesome/free-solid-svg-icons";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Hero from "./Pages/Hero/Hero";
+import { useState } from "react";
+import Banner from "./components/banner/Banner";
+library.add(fas);
 
-
-library.add(fas)
 function App() {
   return (
-    <>
-      <Navbar></Navbar>
-    </>
+    <BrowserRouter>
+      <Banner />
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Hero />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
