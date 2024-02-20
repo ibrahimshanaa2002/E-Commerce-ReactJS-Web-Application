@@ -17,7 +17,7 @@ const Navbar = () => {
         }`}
       >
         <h1 className="text-center flex-grow">
-          Sign up and get 20% off your first order. Sign Up Now
+          Sign up and get 30% off your first order. Sign Up Now
         </h1>
         <FontAwesomeIcon
           icon={faTimes}
