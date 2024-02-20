@@ -1,12 +1,16 @@
-import Header from './components/Header';
-import './App.css';
+import "./App.css";
+import Login from "./components/Login";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
-  <>
-    <Header></Header>
-  </>
-
+    <>
+      <Router>
+        <Route path="/" exact component={Login} />
+      </Router>
+      <Navbar></Navbar>
+    </>
   );
 }
 
