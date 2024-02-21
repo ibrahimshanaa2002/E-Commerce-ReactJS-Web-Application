@@ -1,20 +1,23 @@
 import "./App.css";
-import Navbar from "./components/Navbar";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar/Navbar";
 import Hero from "./Pages/Hero/Hero";
-import { useState } from "react";
+import LogIn from "./Pages/LogIn/LogIn";
 import Banner from "./components/banner/Banner";
+import Login from "./components/Login/Login";
 library.add(fas);
 
 function App() {
   return (
     <BrowserRouter>
       <Banner />
-      <Navbar />
+      {/* <Navbar /> */}
+      <Login />
       <Routes>
         <Route path="/" element={<Hero />} />
+        <Route path="/LogIn" element={<LogIn />} />
       </Routes>
     </BrowserRouter>
   );
