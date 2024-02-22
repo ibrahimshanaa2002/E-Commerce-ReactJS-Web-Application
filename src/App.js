@@ -16,7 +16,7 @@ function App() {
       {/* <Navbar /> */}
       <Login />
       <Routes>
-        <Route path="/" element={<Hero />} />
+        {/* <Route path="/" element={<Hero />} /> */}
         <Route path="/LogIn" element={<LogIn />} />
       </Routes>
     </BrowserRouter>
