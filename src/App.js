@@ -12,7 +12,7 @@ library.add(fas);
 function App() {
   return (
     <BrowserRouter>
-      <Banner />
+      {/* <Banner /> */}
       {/* <Navbar /> */}
       <Login />
       <Routes>
