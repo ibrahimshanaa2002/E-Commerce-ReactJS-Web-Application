@@ -12,11 +12,11 @@ library.add(fas);
 function App() {
   return (
     <BrowserRouter>
-      {/* <Banner /> */}
-      {/* <Navbar /> */}
-      <Login />
+      <Banner />
+      <Navbar />
+      {/* <Login /> */}
       <Routes>
-        {/* <Route path="/" element={<Hero />} /> */}
+        <Route path="/" element={<Hero />} />
         <Route path="/LogIn" element={<LogIn />} />
       </Routes>
     </BrowserRouter>

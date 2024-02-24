@@ -125,10 +125,14 @@ const Login = () => {
                 : "Already have an account?"}
             </h3>
             <span
-              className="flex justify-center pt-3 cursor-pointer  hover:font-semibold duration-75 "
+              className="flex justify-center pt-3 cursor-pointer  duration-75 "
               onClick={toggleFormType}
             >
-              {formType === "login" ? "Sign Up" : "Login"}
+              {formType === "login" ? (
+                <span classname=" hover:font-semibold">Sign Up</span>
+              ) : (
+                "Login"
+              )}
             </span>
           </div>
         </div>
