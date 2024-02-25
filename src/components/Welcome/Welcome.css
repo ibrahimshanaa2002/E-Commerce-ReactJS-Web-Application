@@ -3,8 +3,19 @@
 }
 
 @media screen and (max-width: 600px) {
+  .brand {
+    height: 1.5rem;
+  }
+  .brands {
+    display: flex;
+    flex-direction: column;
+  }
+  .personImage {
+    display: block;
+  }
   .bg-image {
     padding: 1.25rem; /* Equivalent to p-5 in Tailwind CSS */
+    background-image: none;
   }
   .title {
     font-size: 2rem;
