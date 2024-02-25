@@ -22,7 +22,7 @@ const Banner = () => {
           </div>
           <h1 className="text-sm">
             Sign up and get 0% off to your first order.
-            <span className="font-medium text-md underline cursor-pointer hover:text-orange-300 duration-300">
+            <span className="font-medium text-md underline cursor-pointer hover:text-orange-400 duration-300">
               Sign Up Now
             </span>
           </h1>
