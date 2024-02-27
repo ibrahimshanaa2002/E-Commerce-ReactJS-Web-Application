@@ -1,9 +1,13 @@
-import React from 'react'
-import Welcome from '../../components/Welcome/Welcome'
+import React from "react";
+import ProductCard from "../../components/ProductCard/ProductCard";
+// import Welcome from '../../components/Welcome/Welcome'
 const Hero = () => {
   return (
-    <Welcome/>
-  )
-}
+    <>
+      <ProductCard />
+    </>
+    // <Welcome/>
+  );
+};
 
-export default Hero
+export default Hero;

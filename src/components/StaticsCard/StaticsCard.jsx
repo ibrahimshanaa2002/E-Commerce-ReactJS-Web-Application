@@ -3,8 +3,8 @@ import "../Welcome/Welcome.css";
 
 const StaticsCard = () => {
   return (
-    <div class="container mx-auto py-12">
-      <div class="flex flex-wrap">
+    <div class=" py-12 ">
+      <div class="flex flex-wrap ">
         <div class="w-full md:w-1/3 p-3 flex flex-col flex-grow flex-shrink">
           <div class="flex-1  ttext-black rounded-t rounded-b-none overflow-hidden ">
             <div class="p-8 text-3xl font-bold text-center border-b-4 duration-300 transition-transform hover:transform hover:-translate-y-3  hover:text-orange-500 cursor-pointer">
