@@ -7,6 +7,7 @@ import Hero from "./Pages/Hero/Hero";
 import LogIn from "./Pages/LogIn/LogIn";
 import Banner from "./components/banner/Banner";
 import Login from "./components/Login/Login";
+import "./css/Scrollbar.css";
 library.add(fas);
 
 function App() {
