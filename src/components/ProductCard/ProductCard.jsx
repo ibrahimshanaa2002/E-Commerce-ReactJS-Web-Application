@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import product from "../../assets/Brands/product.png";
 import { FaCheck } from "react-icons/fa";
 import { RiStarSFill } from "react-icons/ri";
-
 import "./ProductCard.css";
 
 const ProductCard = () => {
@@ -17,94 +16,94 @@ const ProductCard = () => {
   const [selectedColor, setSelectedColor] = useState(null);
   const [selectedSize, setSelectedSize] = useState(null);
   //Functions
-  useEffect(() => {
-    // Fetch Product Data From Database
-    fetchProductDataFromDatabase()
-      .then(
-        ({
-          title,
-          descriptionData,
-          colorsData,
-          sizesData,
-          newPrice,
-          oldPrice,
-          discount,
-        }) => {
-          setNewPrice(newPrice);
-          setDescription(descriptionData);
-          setOldPrice(oldPrice);
-          setDiscount(discount);
-          setTitle(title);
-          setColors(colorsData);
-          setSizes(sizesData);
-        }
-      )
-      .catch((error) => {
-        console.error("Error fetching product data:", error);
-      });
-  }, []);
-  const fetchProductDataFromDatabase = async () => {
-    try {
-      //API endpoint
-      const response = await fetch("your-endpoint");
-      if (!response.ok) {
-        throw new Error("Failed to fetch product data");
-      }
-      const {
-        title,
-        description,
-        colorsData,
-        sizesData,
-        newPrice,
-        oldPrice,
-        discount,
-      } = await response.json();
-      return {
-        title,
-        description,
-        colorsData,
-        sizesData,
-        newPrice,
-        oldPrice,
-        discount,
-      };
-    } catch (error) {
-      console.error("Error fetching product data:", error);
-      throw error;
-    }
-  };
   // useEffect(() => {
-  //   // Simulated fetch from database
-  //   const fetchData = async () => {
-  //     try {
-  //       const data = await fetchProductDataFromDatabase();
-  //       setTitle(data.title);
-  //       setDescription(data.description);
-  //       setColors(data.colorsData);
-  //       setSizes(data.sizesData);
-  //       setNewPrice(data.newPrice);
-  //       setOldPrice(data.oldPrice);
-  //       setDiscount(data.discount);
-  //     } catch (error) {
+  //   // Fetch Product Data From Database
+  //   fetchProductDataFromDatabase()
+  //     .then(
+  //       ({
+  //         title,
+  //         descriptionData,
+  //         colorsData,
+  //         sizesData,
+  //         newPrice,
+  //         oldPrice,
+  //         discount,
+  //       }) => {
+  //         setNewPrice(newPrice);
+  //         setDescription(descriptionData);
+  //         setOldPrice(oldPrice);
+  //         setDiscount(discount);
+  //         setTitle(title);
+  //         setColors(colorsData);
+  //         setSizes(sizesData);
+  //       }
+  //     )
+  //     .catch((error) => {
   //       console.error("Error fetching product data:", error);
-  //     }
-  //   };
-
-  //   fetchData();
+  //     });
   // }, []);
-
   // const fetchProductDataFromDatabase = async () => {
-  //   // Simulated data
-  //   return {
-  //     title: "Example Product",
-  //     description: "This is a description of the example product.",
-  //     colorsData: ["Red", "Blue", "Green"],
-  //     sizesData: ["Small", "Medium", "Large"],
-  //     newPrice: 50,
-  //     oldPrice: 60,
-  //     discount: 20
-  //   };
+  //   try {
+  //     //API endpoint
+  //     const response = await fetch("your-endpoint");
+  //     if (!response.ok) {
+  //       throw new Error("Failed to fetch product data");
+  //     }
+  //     const {
+  //       title,
+  //       description,
+  //       colorsData,
+  //       sizesData,
+  //       newPrice,
+  //       oldPrice,
+  //       discount,
+  //     } = await response.json();
+  //     return {
+  //       title,
+  //       description,
+  //       colorsData,
+  //       sizesData,
+  //       newPrice,
+  //       oldPrice,
+  //       discount,
+  //     };
+  //   } catch (error) {
+  //     console.error("Error fetching product data:", error);
+  //     throw error;
+  //   }
   // };
+  useEffect(() => {
+    // Simulated fetch from database
+    const fetchData = async () => {
+      try {
+        const data = await fetchProductDataFromDatabase();
+        setTitle(data.title);
+        setDescription(data.description);
+        setColors(data.colorsData);
+        setSizes(data.sizesData);
+        setNewPrice(data.newPrice);
+        setOldPrice(data.oldPrice);
+        setDiscount(data.discount);
+      } catch (error) {
+        console.error("Error fetching product data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  const fetchProductDataFromDatabase = async () => {
+    // Simulated data
+    return {
+      title: "Example Product",
+      description: "This is a description of the example product.",
+      colorsData: ["Red", "Blue", "Green"],
+      sizesData: ["Small", "Medium", "Large"],
+      newPrice: 50,
+      oldPrice: 60,
+      discount: 20,
+    };
+  };
   const handleColorClick = (color) => {
     setSelectedColor(color);
   };
@@ -126,8 +125,15 @@ const ProductCard = () => {
 
   return (
     <div className="main w-full h-screen flex justify-around gap-6 p-10 ">
-      <div className="left-container w-1/2 h-[75%] flex justify-center gap-6">
-        <div className="column-img h-full justify-between  flex flex-col ">
+      <div className="left-container w-1/2 h-1/2 flex justify-center gap-6">
+        <div className="big-image img-hover-zoom ">
+          <img
+            src={product}
+            alt="Brand 1"
+            className="h-full hover:cursor-pointer"
+          />
+        </div>
+        <div className="column-img h-full justify-between  flex flex-col overflow-auto gap-6">
           <img
             src={product}
             alt="Brand 1"
@@ -143,17 +149,20 @@ const ProductCard = () => {
             alt="Brand 1"
             className=" border  h-[30%] w-full rounded-xl hover:border-black duration-100 hover:cursor-pointer"
           />
-        </div>
-        <div className="big-image img-hover-zoom ">
           <img
             src={product}
             alt="Brand 1"
-            className="h-full hover:cursor-pointer"
+            className=" border  h-[30%] w-full rounded-xl hover:border-black duration-100 hover:cursor-pointer"
+          />
+          <img
+            src={product}
+            alt="Brand 1"
+            className=" border  h-[30%] w-full rounded-xl hover:border-black duration-100 hover:cursor-pointer"
           />
         </div>
       </div>
-      <div className="righ-container w-1/2">
-        <h1 className="text-5xl font-extrabold uppercase">{title}</h1>
+      <div className="right-container w-1/2 h-1/2">
+        <h1 className="text-5xl font-extrabold uppercase title">{title}</h1>
         <div className="Main-starts flex justify-start items-center text-center gap-3 py-5">
           <div className="stars flex text-yellow-400 text-2xl">
             <RiStarSFill />
@@ -164,7 +173,7 @@ const ProductCard = () => {
           </div>
           <div className="rate">4.5/ 5</div>
         </div>
-        <div className="price-container flex justify-start items-center gap-6">
+        <div className="price-container flex justify-start items-center gap-4">
           <div className="price">
             <h1 className="font-bold text-3xl">${newPrice}</h1>
           </div>
@@ -181,15 +190,15 @@ const ProductCard = () => {
           <p className="py-5">{description}</p>
         </div>
         <div className="color-container py-5 border-b-2">
-          <h1 className="text-gray-500">Select Colors and Sizes</h1>
-          <div className="colors-sizes flex flex-col gap-5 py-5">
-            <div className="colors flex gap-3">
+          <h1 className="text-gray-500">Select Color</h1>
+          <div className="colors flex flex-col gap-5 py-5">
+            <div className="colors flex gap-3 ">
               {colors.map((color, index) => (
                 <div
                   key={index}
                   onClick={() => handleColorClick(color)}
                   style={{ backgroundColor: color }}
-                  className={`w-12 h-12 rounded-full ${
+                  className={`w-12 h-12 cursor-pointer rounded-full ${
                     selectedColor === color ? "relative" : ""
                   }`}
                 >
@@ -201,19 +210,22 @@ const ProductCard = () => {
                 </div>
               ))}
             </div>
-            <div className="sizes flex gap-4">
-              {sizes.map((size, index) => (
-                <div
-                  key={index}
-                  onClick={() => handleSizeClick(size)}
-                  className={`py-2 px-4 border rounded-xl cursor-pointer ${
-                    selectedSize === size ? "bg-gray-200" : ""
-                  }`}
-                >
-                  {size}
-                </div>
-              ))}
-            </div>
+          </div>
+        </div>
+        <div className="sizes-container py-5 border-b-2">
+          <h1 className="text-gray-500">Select Size</h1>
+          <div className="sizes flex gap-4 py-5 ">
+            {sizes.map((size, index) => (
+              <div
+                key={index}
+                onClick={() => handleSizeClick(size)}
+                className={`py-2 px-4  hover:bg-gray-200 border rounded-xl cursor-pointer ${
+                  selectedSize === size ? "bg-black text-white" : ""
+                }`}
+              >
+                {size}
+              </div>
+            ))}
           </div>
         </div>
         <div className="Counter flex text-center items-center w-full py-5 gap-4">
@@ -234,7 +246,7 @@ const ProductCard = () => {
             </div>
           </div>
           <div className="Add-To-Cart-container w-[70%] bg-black text-white rounded-full gap-5 p-3 flex items-center justify-center hover:text-black hover:bg-orange-400 duration-300 cursor-pointer">
-            <button className="text-3xl">Add To Cart</button>
+            <button className="cart-button text-3xl">Add To Cart</button>
           </div>
         </div>
       </div>
