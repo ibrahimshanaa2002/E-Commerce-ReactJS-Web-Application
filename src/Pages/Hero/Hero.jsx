@@ -1,12 +1,16 @@
 import React from "react";
-import ProductCard from "../../components/ProductCard/ProductCard";
-// import Welcome from '../../components/Welcome/Welcome'
+import ReviewsCard from "../../components/ReviewsCard/ReviewsCard";
+import ReviewsCardHeader from "../../components/ReviewsCard/ReviewsCardHeader/ReviewsCardHeader";
+
+// import Welcome from "../../components/Welcome/Welcome";
 const Hero = () => {
   return (
     <>
-      <ProductCard />
+      {/* <Welcome /> */}
+      {/* <ProductCard /> */}
+      <ReviewsCardHeader />
+      <ReviewsCard />
     </>
-    // <Welcome/>
   );
 };
 

@@ -1,0 +1,18 @@
+.loop-slide {
+  overflow: hidden;
+}
+.loop-slide > div {
+  display: flex;
+  animation: slide-to-left 30s linear infinite;
+}
+.loop-slide > div > * {
+  min-width: calc(100% / 2);
+}
+@keyframes slide-to-left {
+  100% {
+    transform: translateX(calc(-100% * (4 / 2)));
+  }
+}
+.loop-slide > div:hover {
+  animation-play-state: paused;
+}
