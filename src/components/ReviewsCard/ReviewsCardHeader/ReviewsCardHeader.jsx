@@ -1,17 +1,17 @@
 import React from "react";
+import "./ReviewsCardHeader.css";
 import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 
-import Dropdown from "react-bootstrap/Dropdown";
 const ReviewsCardHeader = () => {
   function classNames(...classes) {
     return classes.filter(Boolean).join(" ");
   }
   return (
-    <div className="main flex justify-between items-center p-5">
+    <div className="main-cont flex justify-between items-center p-10 ">
       <div className="title flex items-center">
-        <h1 className="font-bold text-2xl">All Reviews</h1>
+        <h1 className="font-bold text-2xl head-title">All Reviews</h1>
         <h2 className="text-sm">(451)</h2>
       </div>
       <div className="icons">

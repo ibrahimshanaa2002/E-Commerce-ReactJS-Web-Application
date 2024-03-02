@@ -124,8 +124,8 @@ const ProductCard = () => {
   };
 
   return (
-    <div className="main w-full h-screen flex justify-around gap-6 p-10 ">
-      <div className="left-container w-1/2 h-1/2 flex justify-center gap-6">
+    <div className="main w-full h-[80vh] flex justify-around gap-6 p-10 ">
+      <div className="left-container flex-row-reverse w-1/2  flex  gap-6">
         <div className="big-image img-hover-zoom ">
           <img
             src={product}
@@ -161,9 +161,9 @@ const ProductCard = () => {
           />
         </div>
       </div>
-      <div className="right-container w-1/2 h-1/2">
+      <div className="right-container flex justify-center flex-col w-1/2 h-full">
         <h1 className="text-5xl font-extrabold uppercase title">{title}</h1>
-        <div className="Main-starts flex justify-start items-center text-center gap-3 py-5">
+        <div className="Main-starts flex justify-start items-center text-center gap-3 py-2">
           <div className="stars flex text-yellow-400 text-2xl">
             <RiStarSFill />
             <RiStarSFill />
@@ -189,9 +189,9 @@ const ProductCard = () => {
         <div className="product-desc border-b-2">
           <p className="py-5">{description}</p>
         </div>
-        <div className="color-container py-5 border-b-2">
+        <div className="color-container py-2 border-b-2">
           <h1 className="text-gray-500">Select Color</h1>
-          <div className="colors flex flex-col gap-5 py-5">
+          <div className="colors flex flex-col gap-5 py-2">
             <div className="colors flex gap-3 ">
               {colors.map((color, index) => (
                 <div
@@ -212,9 +212,9 @@ const ProductCard = () => {
             </div>
           </div>
         </div>
-        <div className="sizes-container py-5 border-b-2">
+        <div className="sizes-container py-2 border-b-2">
           <h1 className="text-gray-500">Select Size</h1>
-          <div className="sizes flex gap-4 py-5 ">
+          <div className="sizes flex gap-4 py-2 ">
             {sizes.map((size, index) => (
               <div
                 key={index}
